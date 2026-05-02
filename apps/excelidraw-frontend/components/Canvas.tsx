@@ -22,7 +22,7 @@ export function Canvas({
     }, [selectedTool, game]);
 
     useEffect(() => {
-
+        if(!canvasRef.current) return;
         if (canvasRef.current) {
             const g = new Game(canvasRef.current, roomId, socket);
             setGame(g);
@@ -33,13 +33,17 @@ export function Canvas({
         }
 
 
-    }, [canvasRef]);
+    }, [roomId, socket]);
 
     return <div style={{
         height: "100vh",
         overflow: "hidden"
     }}>
-        <canvas ref={canvasRef} width={window.innerWidth} height={window.innerHeight}></canvas>
+        <canvas
+        ref={canvasRef}
+        width={typeof window !== "undefined" ? window.innerWidth : 800}
+        height={typeof window !== "undefined" ? window.innerHeight : 600}
+        />
         <Topbar setSelectedTool={setSelectedTool} selectedTool={selectedTool} />
     </div>
 }

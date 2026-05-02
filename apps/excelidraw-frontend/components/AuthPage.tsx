@@ -3,6 +3,7 @@ import { HTTP_BACKEND } from "@/config";
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 export function Authpage({ Issignin }: { Issignin: boolean }) {
     const router = useRouter();
     const [email, setEmail] = useState("");
@@ -21,6 +22,7 @@ export function Authpage({ Issignin }: { Issignin: boolean }) {
                 if(token){
                     localStorage.setItem("token", token);
                     alert("Signin successful");
+                    router.push("/Dashboard");
                     
                 }
             }
@@ -96,7 +98,7 @@ export function Authpage({ Issignin }: { Issignin: boolean }) {
         <p className="text-sm text-black-200 text-center mt-4">
           {Issignin ? "Don't have an account?" : "Already have an account?"}
           <span className="ml-1 underline cursor-pointer hover:text-white">
-            {Issignin ? "Sign Up" : "Sign In"}
+            {Issignin ? <Link href="/signup">Sign Up</Link> : <Link href="/signin">Sign In</Link>}
           </span>
         </p>
 
