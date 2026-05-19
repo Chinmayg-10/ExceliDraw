@@ -1,22 +1,24 @@
 {
   "name": "draw-app",
   "private": true,
+
+  "packageManager": "pnpm@9.15.0",
+
+  "engines": {
+    "node": "20.x"
+  },
+
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+
   "devDependencies": {
     "prettier": "^3.2.5",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
-  },
-  "packageManager": "pnpm@9.15.0",
-  "engines": {
-    "node": "20.x",
-    "pnpm": "9.x"
   }
 }
-
 
