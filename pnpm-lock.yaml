@@ -189,10 +189,10 @@ importers:
   packages/db:
     dependencies:
       '@prisma/client':
-        specifier: 6.2.1
-        version: 6.2.1(prisma@6.19.3(typescript@5.5.4))
+        specifier: 6.19.3
+        version: 6.19.3(prisma@6.19.3(typescript@5.5.4))(typescript@5.5.4)
       prisma:
-        specifier: ^6.2.1
+        specifier: 6.19.3
         version: 6.19.3(typescript@5.5.4)
     devDependencies:
       '@repo/typescript-config':
@@ -558,13 +558,16 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@prisma/client@6.2.1':
-    resolution: {integrity: sha512-msKY2iRLISN8t5X0Tj7hU0UWet1u0KuxSPHWuf3IRkB4J95mCvGpyQBfQ6ufcmvKNOMQSq90O2iUmJEN2e5fiA==}
+  '@prisma/client@6.19.3':
+    resolution: {integrity: sha512-mKq3jQFhjvko5LTJFHGilsuQs+W+T3Gm451NzuTDGQxwCzwXHYnIu2zGkRoW+Exq3Rob7yp2MfzSrdIiZVhrBg==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
+      typescript: '>=5.1.0'
     peerDependenciesMeta:
       prisma:
+        optional: true
+      typescript:
         optional: true
 
   '@prisma/config@6.19.3':
@@ -3428,9 +3431,10 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@prisma/client@6.2.1(prisma@6.19.3(typescript@5.5.4))':
+  '@prisma/client@6.19.3(prisma@6.19.3(typescript@5.5.4))(typescript@5.5.4)':
     optionalDependencies:
       prisma: 6.19.3(typescript@5.5.4)
+      typescript: 5.5.4
 
   '@prisma/config@6.19.3':
     dependencies:
